@@ -45,7 +45,7 @@ console.log(newsData);
 
 return (
       
-<div><h1>Top News for the Day</h1>
+<div className="page"><h1>Top News for the Day</h1>
         
 <div className="cards-container">
 <Pagination className="pagination" count={20} color="secondary" page={page} onChange={handleChange} />
@@ -55,12 +55,12 @@ return (
 {newsData.slice((page-1) * 3,page * 3).map((user, index) => {
   return (
     
-      <Grid item xs={2} sm={4} md={4} key={index}>
+      <Grid item xs={5} sm={4} md={4} key={index}>
 
       {/* return ( */}
   
       <>
-    
+          <div className="row">
           <Card sx={{ maxWidth: 345 }} className="card" >
               <CardActionArea>
                   <CardMedia
@@ -92,7 +92,7 @@ return (
                   </Button>
                 </CardActions>
             </Card>
-    
+            </div>
     </>
   {/* ); */}
   
@@ -117,4 +117,6 @@ return (
 
 
 export default NewsApi
+
+
 
