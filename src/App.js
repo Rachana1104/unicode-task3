@@ -6,36 +6,30 @@ import NavBar from './components/NavBar';
 
 import './App.css';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+  BrowserRouter as Router ,
+  Switch,
+  
 } from "react-router-dom";
 
-const App = () => {
-    return (
+const App=()=>{
+  return(
 
-        <
-        Router >
-        <
-        div className = "App" >
-        <
-        NavBar / >
-
-        <
-        Switch >
-        <
-        NewsApi / > { /* <Route exact path="/newsDetails/:index" exact component={NewsDetails}/> */ }
-
-        <
-        /Switch>
-
-        <
-        /div>
-
-        <
-        /Router>
-    );
+    <Router>
+    <div className="App">
+      <NavBar/>
+      
+      <Switch>  
+      <NewsApi/>
+      {/* <Route exact path="/newsDetails/:index" exact component={NewsDetails}/> */}
+      
+      </Switch>
+      
+    </div>
+    
+    </Router>
+  );
 
 };
 
 export default App;
+
