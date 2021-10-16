@@ -1,0 +1,80 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.cards-container {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+h1 {
+    color: darkblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background: rgb(25, 44, 212);
+    color: white;
+}
+
+.nav-links {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+li {
+    color: rgb(190, 209, 15);
+}
+
+.card:hover {
+    border: 8px solid black !important;
+    background-color: pink;
+    opacity: 100%;
+    transform: translateY(-50px);
+}
+
+li:hover {
+    color: rgb(173, 44, 120);
+}
+
+.card {
+    text-align: left;
+    height: calc(100vh/1.7);
+    border-radius: 15%;
+}
+
+.pagination {
+    color: blanchedalmond;
+    background: cornflowerblue;
+    width: 100%;
+    align-content: center;
+}
+
+.pagination-button {
+    color: white;
+    background: indigo;
+    height: 15%;
+    border-radius: 15%;
+    padding: 10px;
+}
+
+.box {
+    padding-top: 5%;
+}
+
+h3 {
+    padding-right: 75%;
+}
