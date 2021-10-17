@@ -46,7 +46,7 @@ const NewsApi = () => {
     return (
 
         <
-        div > < h1 > Top News
+        div className = "page" > < h1 > Top News
         for the Day < /h1>
 
         <
@@ -71,7 +71,7 @@ const NewsApi = () => {
                 return (
 
                     <
-                    Grid item xs = { 2 }
+                    Grid item xs = { 4 }
                     sm = { 4 }
                     md = { 4 }
                     key = { index } >
@@ -80,7 +80,8 @@ const NewsApi = () => {
 
                     <
                     >
-
+                    <
+                    div className = "row" >
                     <
                     Card sx = {
                         { maxWidth: 345 } }
@@ -105,7 +106,8 @@ const NewsApi = () => {
                     color = "text.secondary" > { user.author } <
                     /Typography> <
                     Typography variant = "body2"
-                    color = "text.secondary" > { user.publishedAt } <
+                    color = "text.secondary" >
+                    Published At: { user.publishedAt } <
                     /Typography>
 
                     <
@@ -122,9 +124,8 @@ const NewsApi = () => {
                     <
                     /Button> <
                     /CardActions> <
-                    /Card>
-
-                    <
+                    /Card> <
+                    /div> <
                     /> { /* ); */ }
 
 
@@ -140,6 +141,10 @@ const NewsApi = () => {
         } <
         /Grid> <
         /Box>   <
+        div className = "copy" >
+        <
+        h3 > Created by < a href = "/" > RACHANA YELDI < /a><br/ > < br / > Copy Right @2021 < /h3> <
+        /div> <
         /div>
 
 
