@@ -1,12 +1,3 @@
-.App {
-    text-align: center;
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
 .cards-container {
     padding-left: 5%;
     padding-right: 5%;
@@ -37,19 +28,19 @@ nav {
 
 li {
     color: rgb(190, 209, 15);
+    font-size: 110%;
 }
 
 .card:hover {
-    border: 8px solid black;
     background-color: pink;
-    transform: scale(1.2);
 }
 
 li:hover {
-    color: rgb(173, 44, 120);
+    color: rgb(42, 219, 71);
 }
 
 .card {
+    border: 8px solid black;
     display: block;
     float: left;
     text-align: left;
@@ -64,20 +55,12 @@ li:hover {
     align-content: center;
 }
 
-.pagination-button {
-    color: white;
-    background: indigo;
-    height: 15%;
-    border-radius: 15%;
-    padding: 10px;
-}
-
 .box {
     padding-top: 3%;
 }
 
 h3 {
-    padding-right: 75%;
+    padding-right: 20%;
     height: 20%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -88,15 +71,24 @@ h3 {
     padding-bottom: 8%;
 }
 
-.row:after {
-    content: "" !important;
-    display: table !important;
-    clear: both !important;
+.copy {
+    padding-top: 3%;
+    padding-left: 10%;
+    font-size: 75%;
+    text-align: center;
 }
 
-.copy {
-    padding-top: 5%;
-    padding-left: 75vh;
+.image {
+    height: 20%;
+    width: 20%;
+}
+
+.newsdetails {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(120, 172, 241);
+    padding-top: 1%;
+    padding-bottom: 18%;
+    text-align: center;
 }
 
 @media screen and (max-width: 700px) {

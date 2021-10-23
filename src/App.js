@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import NewsApi from './components/newsApi';
 import NavBar from './components/NavBar';
-
-//import NewsDetails from './components/NewsDetails';
+import NewsDetails from './components/NewsDetails';
 
 import './App.css';
 import {
     BrowserRouter as Router,
     Switch,
-
+    Route
 } from "react-router-dom";
 
 const App = () => {
+    const [card, setCard] = useState({})
+    useEffect(() => {
+        // console.log(card)
+    }, [card])
+
     return (
 
         <
@@ -20,19 +24,20 @@ const App = () => {
         div className = "App" >
         <
         NavBar / >
-
         <
         Switch >
         <
-        NewsApi / > { /* <Route exact path="/newsDetails/:index" exact component={NewsDetails}/> */ }
-
+        Route path = "/:title" > < NewsDetails card = { card }
+        setCard = { setCard }
+        /></Route >
         <
-        /Switch>
-
+        Route path = "/"
+        exact > < NewsApi card = { card }
+        setCard = { setCard }
+        /></Route >
         <
-        /div>
-
-        <
+        /Switch> <
+        /div> <
         /Router>
     );
 

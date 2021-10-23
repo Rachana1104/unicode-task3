@@ -6,27 +6,23 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-// import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Pagination from '@mui/material/Pagination';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-
-const NewsApi = () => {
+const NewsApi = ({ card, setCard }) => {
     const [page, setPage] = useState(1);
     const [newsData, setNewsData] = useState([]);
 
-
-    console.log(newsData);
+    // console.log(newsData);
 
     useEffect(() => {
-        // var list=[]
         (async() => {
             let userData;
             try {
                 const response = await fetch("https://saurav.tech/NewsAPI/top-headlines/category/health/in.json");
                 userData = (await response.json());
-                // list=response.data.articles;
-                console.log(userData)
+                // console.log(userData)
 
 
             } catch (error) {
@@ -39,7 +35,7 @@ const NewsApi = () => {
     }, []);
 
     function handleChange(event, value) {
-        console.log(value);
+        // console.log(value);
         setPage(value);
     }
 
@@ -53,7 +49,7 @@ const NewsApi = () => {
         div className = "cards-container" >
         <
         Pagination className = "pagination"
-        count = { 20 }
+        count = { 16 }
         color = "secondary"
         page = { page }
         onChange = { handleChange }
@@ -67,17 +63,14 @@ const NewsApi = () => {
             { xs: 2, md: 3 } }
         columns = {
             { xs: 4, sm: 8, md: 12 } } > {
-            newsData.slice((page - 1) * 3, page * 3).map((user, index) => {
+            newsData.slice((page - 1) * 4, page * 4).map((user, index) => {
                 return (
 
                     <
                     Grid item xs = { 4 }
                     sm = { 4 }
-                    md = { 4 }
+                    md = { 3 }
                     key = { index } >
-
-                    { /* return ( */ }
-
                     <
                     >
                     <
@@ -95,7 +88,6 @@ const NewsApi = () => {
                     image = { user.urlToImage }
                     alt = "this is an image" /
                     >
-
                     <
                     CardContent >
                     <
@@ -108,34 +100,23 @@ const NewsApi = () => {
                     Typography variant = "body2"
                     color = "text.secondary" >
                     Published At: { user.publishedAt } <
-                    /Typography>
-
-                    <
+                    /Typography> <
                     /CardContent> <
                     /CardActionArea> <
                     CardActions >
                     <
                     Button size = "small"
                     color = "primary"
-                    href = { user.url } >
-
-                    LEARN MORE
-
+                    onClick = {
+                        () => { setCard(user) } } >
                     <
+                    Link to = { user.title.replaceAll(" ", "+").replaceAll("%", " ") } > LEARN MORE < /Link> <
                     /Button> <
                     /CardActions> <
                     /Card> <
                     /div> <
-                    /> { /* ); */ }
-
-
-
-                    <
+                    /> <
                     /Grid>
-
-
-
-
                 )
             })
         } <
@@ -145,10 +126,7 @@ const NewsApi = () => {
         <
         h3 > Created by < a href = "/" > RACHANA YELDI < /a><br/ > < br / > Copy Right @2021 < /h3> <
         /div> <
-        /div>
-
-
-        <
+        /div> <
         /div> 
 
     )
