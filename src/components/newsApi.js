@@ -55,7 +55,7 @@ const NewsApi = ({ card, setCard }) => {
         onChange = { handleChange }
         /> <
         Box sx = {
-            { flexGrow: 5 } }
+            { flexGrow: 5, flexDirection: "column" } }
         className = "box" >
 
         <
@@ -122,10 +122,6 @@ const NewsApi = ({ card, setCard }) => {
         } <
         /Grid> <
         /Box>   <
-        div className = "copy" >
-        <
-        h3 > Created by < a href = "/" > RACHANA YELDI < /a><br/ > < br / > Copy Right @2021 < /h3> <
-        /div> <
         /div> <
         /div> 
 
